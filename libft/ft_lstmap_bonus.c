@@ -12,17 +12,15 @@
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **list, void (*del)(void *))
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-  t_list	*next_list;
-  t_list  *temp;
+  // t_list **start_pointer;
+  // t_list *node;  start point will be allocated with malloc
+  // t_list *next_node; next node to be binded with first
+  // void  *new_content;  the content after application of function f
 
-  temp = *list;
-  if (temp->next)
-  {
-    next_list = temp->next;
-    ft_lstclear(&next_list, del);
-  }
-  (*del)(temp->content);
-  (*del)(temp);
+  // node = lst; assign lst to start node
+  // start_pointer = & node; pointer to return
+  // set_nodes(new_node, next_node, f, del); will be a recursive function applies f to nodes
+  // return start_pointer;
 }

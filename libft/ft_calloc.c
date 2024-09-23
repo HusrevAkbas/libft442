@@ -21,7 +21,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb * size > INT_MAX || nmemb * size == 0)
 		return (0);
 	pointer = malloc(nmemb * size);
-	// check if malloc failed
 	i = 0;
 	while (i < size * nmemb)
 		pointer[i++] = 0;

@@ -17,7 +17,6 @@ void	ft_putnbr_fd(int n, int fd)
 	char	*num_as_str;
 
 	num_as_str = ft_itoa(n);
-	// check if itoa failed
 	ft_putstr_fd(num_as_str, fd);
 	free(num_as_str);
 }

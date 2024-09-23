@@ -54,7 +54,6 @@ char	*ft_itoa(int n)
 		count_char += 1;
 	}
 	p = ft_calloc(count_char + 1, sizeof(char));
-	// check if calloc failed
 	set_mem(p, (n / 10) * sign, count_char - 2);
 	if (sign < 0)
 		p[0] = '-';

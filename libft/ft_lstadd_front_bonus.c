@@ -6,7 +6,7 @@
 /*   By: huakbas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:23:15 by huakbas           #+#    #+#             */
-/*   Updated: 2024/09/20 14:23:17 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/09/23 18:00:06 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (*lst == NULL || new == NULL)
+		return ;
 	new->next = *lst;
 }

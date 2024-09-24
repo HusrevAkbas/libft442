@@ -18,10 +18,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (*lst == NULL || new == NULL)
 		return ;
-	new_list = *lst;
-	while (new_list->next)
-	{
-		new_list = new_list->next;
-	}
+	new_list = ft_lstlast(*lst);
 	new_list->next = new;
 }

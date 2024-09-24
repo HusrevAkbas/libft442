@@ -14,9 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	void	*content_to_be_deleted;
-
-	content_to_be_deleted = lst->content;
-	del(content_to_be_deleted);
+	del(lst->content);
 	free(lst);
 }

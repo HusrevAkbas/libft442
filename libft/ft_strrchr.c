@@ -12,20 +12,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*p;
-	char	*r;
+	char	*pointer;
+	char	*pointer_to_char;
 
-	p = (char *) s;
-	while (*p)
+	pointer = (char *) s;
+	while (*pointer)
 	{
-		if (*p == c)
-			r = p;
-		p++;
+		if (*pointer == c)
+			pointer_to_char = pointer;
+		pointer++;
 	}
-	if (*p == '\0' && c == '\0')
-		return (p);
-	if (*p)
-		return (r);
+	if (*pointer == '\0' && c == '\0')
+		return (pointer);
+	if (*pointer)
+		return (pointer_to_char);
 	else
 		return (0);
 }

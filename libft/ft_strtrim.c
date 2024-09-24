@@ -14,20 +14,20 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char			*p;
+	char			*pointer;
 	unsigned int	s1_length;
 	unsigned int	start;
 	unsigned int	end;
 
 	s1_length = ft_strlen(s1);
 	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))
+	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
 		start++;
 	end = 1;
-	while ((s1_length - end) != 0 && ft_strchr(set, s1[s1_length - end]))
+	while ((s1_length - end) != '\0' && ft_strchr(set, s1[s1_length - end]))
 		end++;
 	if (start >= s1_length)
 		return (0);
-	p = ft_substr(s1, start, s1_length - end - start + 1);
-	return (p);
+	pointer = ft_substr(s1, start, s1_length - end - start + 1);
+	return (pointer);
 }

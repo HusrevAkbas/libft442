@@ -1,6 +1,7 @@
 #ifndef LIBFT
 #define LIBFT
 #include "../libft/libft.h"
+#include "../test_bonus/bonuslib.h"
 #include <ctype.h>
 #include <fcntl.h>
 #include <bsd/string.h>
@@ -33,6 +34,5 @@ void	test_ft_putchar_fd();
 void	test_ft_putstr_fd();
 void	test_ft_putendl_fd();
 void	test_ft_putnbr_fd();
-void	test_nodes();
 
 #endif //end of LIBFT

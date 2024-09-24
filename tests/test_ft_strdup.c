@@ -24,8 +24,8 @@ void	test_or_strdup(char *s, char *ss)
 	pointer = strdup(ss);
 	while (pointer[i])
 	{
-	printf("%c", pointer[i]);
-	i++;
+		printf("%c", pointer[i]);
+		i++;
 	}
 	printf("\n%p\n", pointer);
 	free(pointer);

@@ -31,6 +31,5 @@ int main()
     //test_ft_putendl_fd();
     //test_ft_putnbr_fd();
     test_nodes();
-    //NODE FUNCTIONS WILL BE TESTED TOGETHER
     return (0);
 }

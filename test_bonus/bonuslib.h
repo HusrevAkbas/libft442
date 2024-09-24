@@ -1,0 +1,9 @@
+void	test_ft_lstnew();
+void	test_nodes();
+void	test_ft_lstadd_front();
+void	test_ft_lstadd_back();
+void	test_ft_lstsize();
+void	test_ft_lstlast();
+void	test_ft_lstdelone();
+void	test_ft_lstclear();
+void	test_ft_lstiter();

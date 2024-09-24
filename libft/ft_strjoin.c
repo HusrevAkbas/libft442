@@ -14,19 +14,19 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*p;
+	char			*pointer;
 	unsigned int	s1_length;
 	unsigned int	s2_length;
 	unsigned int	i;
 
 	s1_length = ft_strlen(s1);
 	s2_length = ft_strlen(s2);
-	p = malloc(s1_length + s2_length + 1);
+	pointer = malloc(s1_length + s2_length + 1);
 	i = 0;
 	while (*s1)
-		p[i++] = *s1++;
+		pointer[i++] = *s1++;
 	while (*s2)
-		p[i++] = *s2++;
-	p[i] = 0;
-	return (p);
+		pointer[i++] = *s2++;
+	pointer[i] = 0;
+	return (pointer);
 }

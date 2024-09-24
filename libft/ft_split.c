@@ -28,31 +28,47 @@ static int	count_words(char *s, char c)
 	return (word);
 }
 
-static void	split(char **p, char *s, char *c, unsigned int p_i)
+static void	clear_mem(char **pointer, int i)
+{
+	while (i >= 0)
+	{
+		free(pointer[i]);
+		i++;
+	}
+	free(pointer);
+	pointer = NULL;
+}
+
+static void	split(char **pointer, char *s, char *c, unsigned int p_i)
 {
 	unsigned int	i;
 	char			*sub_string;
 	char			*trimmed_sub_string;
 
 	i = 0;
-	while (s[i] && s[i] != c[0])
+	while (s[i] != 0 && s[i] != c[0])
 		i++;
 	if (i != 0)
 	{
-		p[p_i] = ft_calloc(i, sizeof(char));
-		ft_memcpy(p[p_i], s, i);
+		pointer[p_i] = ft_calloc(i, sizeof(char));
+		if (pointer[p_i] == NULL)
+		{
+			clear_mem(pointer, p_i);
+			return ;
+		}
+		ft_memcpy(pointer[p_i], s, i);
 	}
 	if (i == ft_strlen(s))
 		return ;
 	sub_string = ft_substr(s, i, ft_strlen(s));
 	trimmed_sub_string = ft_strtrim(sub_string, c);
-	split(p, trimmed_sub_string, c, p_i + 1);
+	split(pointer, trimmed_sub_string, c, p_i + 1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**p;
-	char	*m;
+	char	**pointer;
+	char	*str;
 	char	ch[2];
 	int		words;
 
@@ -60,10 +76,15 @@ char	**ft_split(char const *s, char c)
 	ch[1] = 0;
 	if (ft_strlen(s) < 2)
 		return (0);
-	m = (char *) s;
-	m = ft_strtrim(m, ch);
-	words = count_words(m, c);
-	p = (char **)ft_calloc(words, sizeof(char *));
-	split(p, m, ch, 0);
-	return (p);
+	str = (char *) s;
+	str = ft_strtrim(str, ch);
+	words = count_words(str, c);
+	pointer = (char **)ft_calloc(words, sizeof(char *));
+	if (pointer == NULL)
+	{
+		free(pointer);
+		return (NULL);
+	}
+	split(pointer, str, ch, 0);
+	return (pointer);
 }

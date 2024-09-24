@@ -14,16 +14,21 @@
 
 char	*ft_strdup(const char *s)
 {
-	char	*p;
+	char	*pointer;
 	int		i;
 
-	p = (char *)malloc(ft_strlen(s) + 1);
+	pointer = (char *)malloc(ft_strlen(s) + 1);
+	if (pointer == NULL)
+	{
+		free(pointer);
+		return (NULL);
+	}
 	i = 0;
 	while (s[i])
 	{
-		p[i] = s[i];
+		pointer[i] = s[i];
 		i++;
 	}
-	p[i] = '\0';
-	return (p);
+	pointer[i] = '\0';
+	return (pointer);
 }

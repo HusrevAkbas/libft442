@@ -14,17 +14,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*p;
+	char			*pointer;
 	unsigned int	s_length;
 	unsigned int	i;
 
 	s_length = ft_strlen(s);
 	if (s_length < start + len)
 		len = s_length - start;
-	p = malloc(len + 1);
+	pointer = (char *) malloc(len + 1);
+	if (pointer == NULL)
+	{
+		free(pointer);
+		return (NULL);
+	}
 	i = 0;
 	while (len > i && s[start])
-		p[i++] = s[start++];
-	p[i] = 0;
-	return (p);
+		pointer[i++] = s[start++];
+	pointer[i] = 0;
+	return (pointer);
 }

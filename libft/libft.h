@@ -21,7 +21,8 @@
 //	3 - Use malloc instead of calloc as long as you can
 //	4 - Cast type using calloc malloc to know if it s single
 //		or double pointer
-//	4 - Loop through indexes instead of moving pointer
+//	5 - Loop through indexes instead of moving pointer
+//	6 - Check if Makefile relinks
 
 typedef struct s_list
 {
@@ -69,7 +70,9 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **list, void (*del)(void *));
 void	ft_lstdeletecontent(void *ptr);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 

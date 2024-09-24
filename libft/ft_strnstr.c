@@ -14,28 +14,28 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*b;
-	char	*l;
+	char	*new_big;
+	char	*new_little;
 	char	*big_index;
 
-	b = (char *) big;
+	new_big = (char *) big;
 	if (ft_strlen (little) == 0)
-		return (b);
-	while (ft_strlen(little) <= len && *b)
+		return (new_big);
+	while (ft_strlen(little) <= len && *new_big)
 	{
-		l = (char *) little;
-		if (*b == *l)
+		new_little = (char *) little;
+		if (*new_big == *new_little)
 		{
-			big_index = b;
-			while (*big_index == *l)
+			big_index = new_big;
+			while (*big_index == *new_little)
 			{
 				big_index++;
-				l++;
-				if (*l == 0)
-					return (b);
+				new_little++;
+				if (*new_little == 0)
+					return (new_big);
 			}
 		}
-		b++;
+		new_big++;
 	}
 	return (0);
 }

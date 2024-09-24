@@ -27,19 +27,19 @@ int	count_chars(int n)
 	return (count);
 }
 
-void	set_mem(char *p, int n, int index)
+void	set_mem(char *pointer, int n, int index)
 {
 	int	last_digit;
 
 	last_digit = n % 10;
 	if (n >= 10)
-		set_mem(p, n / 10, index - 1);
-	p[index] = '0' + last_digit;
+		set_mem(pointer, n / 10, index - 1);
+	pointer[index] = '0' + last_digit;
 }
 
 char	*ft_itoa(int n)
 {
-	char	*p;
+	char	*pointer;
 	int		last_digit;
 	int		sign;
 	int		count_char;
@@ -53,10 +53,15 @@ char	*ft_itoa(int n)
 		last_digit *= -1;
 		count_char += 1;
 	}
-	p = ft_calloc(count_char + 1, sizeof(char));
-	set_mem(p, (n / 10) * sign, count_char - 2);
+	pointer = ft_calloc(count_char + 1, sizeof(char));
+	if (pointer == NULL)
+	{
+		free(pointer);
+		return (NULL);
+	}
+	set_mem(pointer, (n / 10) * sign, count_char - 2);
 	if (sign < 0)
-		p[0] = '-';
-	p[count_char -1] = '0' + last_digit;
-	return (p);
+		pointer[0] = '-';
+	pointer[count_char -1] = '0' + last_digit;
+	return (pointer);
 }

@@ -12,20 +12,20 @@
 
 #include "libft.h"
 
-void	move_forward(unsigned char *d, unsigned char *s, size_t n)
+static void	move_forward(char *destination, char *source, size_t n)
 {
 	while (n > 0)
 	{
-		*d++ = *s++;
+		*destination++ = *source++;
 		n--;
 	}
 }
 
-void	move_backward(unsigned char *d, unsigned char *s, size_t n)
+static void	move_backward(char *destination, char *source, size_t n)
 {
 	while (n > 0)
 	{
-		*d-- = *s--;
+		*destination-- = *source--;
 		n--;
 	}
 }
@@ -40,28 +40,28 @@ size_t	set_n(size_t src_len, size_t n)
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	char	*destination;
+	char	*source;
 	size_t			src_length;
 
-	d = (unsigned char *) dest;
-	s = (unsigned char *) src;
+	destination = (char *) dest;
+	source = (char *) src;
 	src_length = ft_strlen(src);
 	if (dest - src < 0)
-		move_forward(d, s, set_n(src_length, n));
+		move_forward(destination, source, set_n(src_length, n));
 	else
 	{
 		if (n > src_length)
 		{
-			d += src_length +1;
-			s += src_length +1;
+			destination += src_length +1;
+			source += src_length +1;
 		}
 		else
 		{
-			d += n -1;
-			s += n -1;
+			destination += n -1;
+			source += n -1;
 		}
-		move_backward(d, s, n);
+		move_backward(destination, source, n);
 	}
 	return (dest);
 }

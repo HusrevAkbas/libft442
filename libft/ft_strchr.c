@@ -12,16 +12,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*p;
+	char	*pointer;
 
-	p = (char *) s;
-	while (*p)
+	pointer = (char *) s;
+	while (*pointer)
 	{
-		if (*p == c)
-			return (p);
-		p++;
+		if (*pointer == c)
+			return (pointer);
+		pointer++;
 	}
-	if (*p == '\0' && c == '\0')
-		return (p);
+	if (*pointer == '\0' && c == '\0')
+		return (pointer);
 	return (0);
 }

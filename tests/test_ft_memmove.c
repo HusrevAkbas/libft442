@@ -5,6 +5,7 @@ void	test_my_memmove(char *str, void *dest, void *src, size_t n)
 	printf("TEST : %s\n\n", str);
 	//printf("dest: %s\n src: %s\n", dest, src);
 	void *ptr1 = ft_memmove(dest, src, n);
+	write(1, ptr1, n);
 	printf("ft_memmove: %s\n", (char *)ptr1);
 }
 void	test_or_memmove(char *str, void *dest, void *src, size_t n)
@@ -12,6 +13,7 @@ void	test_or_memmove(char *str, void *dest, void *src, size_t n)
 	(void) str;
 	//printf("dest: %s\n src: %s\n", dest, src);
 	void *ptr2 = memmove(dest, src, n);
+	write(1, ptr2, n);
 	printf("   memmove: %s\n\n", (char *)ptr2);
 }
 void	test_ft_memmove()
@@ -26,6 +28,8 @@ void	test_ft_memmove()
 	char	str6[50] = "what kind";
 	char	str7[50] = "hackaton solomon";
 	char	str8[50] = "hackaton solomon";
+	char	str9[50] = "con\0sec\0\0te\0tur";
+	char	str10[50] = "con\0sec\0\0te\0tur";
 
 	printf("TEST DEFINITIONS ARE NOT CORRECT\n");
 
@@ -37,6 +41,8 @@ void	test_ft_memmove()
 	test_or_memmove("check different arrays", str6, str8, 20);
 	test_my_memmove("dest starts in src", &str3[5], str3, 30);
 	test_or_memmove("dest starts in src", &str4[5], str4, 30);
+	test_my_memmove("\\0 in string", str7, str9, 10);
+	test_or_memmove("\\0 in string", str8, str10, 10);
 	/*
 	char str3[50] = "my first memmove func";
 	char str4[50] = "my first memmove func";

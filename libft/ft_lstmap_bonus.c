@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-static void set_new_node(t_list *lst, t_list *next_node, void (*f)(void *), void (*del)(void *))
+static void	set_new_node(t_list *lst, t_list *next_node,
+						void (*f)(void *), void (*del)(void *))
 {
 	t_list	*new_node;
 	t_list	*last_node_lst;

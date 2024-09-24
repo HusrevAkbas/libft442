@@ -51,7 +51,7 @@ clean:
 	rm *.o
 
 fclean:
-	rm -f $(NAME)
+	rm -f $(NAME) clean
 	
 re: fclean all
 

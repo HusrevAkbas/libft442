@@ -16,6 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*pointer_to_char;
 
 	pointer = (char *) s;
+	pointer_to_char = 0;
 	while (*pointer)
 	{
 		if (*pointer == c)
@@ -24,8 +25,5 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (*pointer == '\0' && c == '\0')
 		return (pointer);
-	if (*pointer)
-		return (pointer_to_char);
-	else
-		return (0);
+	return (pointer_to_char);
 }

@@ -9,7 +9,7 @@ int main()
     //test_ft_memset();
     //test_ft_bzero();
     //test_ft_strchr();
-    //test_ft_strrchr();
+    test_ft_strrchr();
     //test_ft_strnstr();
     //test_ft_memcpy();
     //test_ft_memmove();

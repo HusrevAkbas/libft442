@@ -2,11 +2,11 @@
 
 void	test_ft_memchr()
 {
-	char	s[50] = "test of memchr";
+	char	s[50] = "btest of memchr";
 	char	*p;
-	p = ft_memchr(s, 'm', 20);
+	p = ft_memchr(s, 'b', 5);
 	if (p)
-		printf("%p : %c\n", p, p[0]);
+		printf("%s : %p : %c\n", p, p, p[0]);
 	else
 		printf("%p\n", p);
 }

@@ -19,12 +19,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 
 	s_length = ft_strlen(s);
-	if (s_length < start + len)
+	if (s_length <= start + len)
 		len = s_length - start;
 	pointer = (char *) malloc(len + 1);
 	if (pointer == NULL)
 	{
-		free(pointer);
 		return (NULL);
 	}
 	i = 0;

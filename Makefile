@@ -3,7 +3,7 @@ LIBFT := libft
 TARGET := test
 SRC := $(wildcard test*/*.c)# $(wildcard tests_bonus/*.c)
 all:
-	$(MAKE) -C ${LIBFT} bonus clean
+	$(MAKE) -C ${LIBFT} bonus
 #	valgrind -s --leak-check=full --show-leak-kinds=all 
 	cc ${CFLAGS} ${SRC} test.c -L ${LIBFT} -lft -lbsd -o ${TARGET}
 	./${TARGET}

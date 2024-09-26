@@ -12,30 +12,32 @@
 
 #include "libft.h"
 
+int	compare(char *str1, char *str2, size_t i, size_t len)
+{
+	if (i + ft_strlen(str2) > len)
+		return (-1);
+	return (ft_strncmp(str1, str2, ft_strlen(str2)));
+}
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	char	*new_big;
 	char	*new_little;
-	char	*big_index;
+	size_t	i;
 
+	i = 0;
 	new_big = (char *) big;
+	new_little = (char *) little;
 	if (ft_strlen (little) == 0)
 		return (new_big);
-	while (ft_strlen(little) <= len && *new_big)
+	while (i < len && new_big[i] != 0)
 	{
-		new_little = (char *) little;
-		if (*new_big == *new_little)
+		if (new_big[i] == new_little[0])
 		{
-			big_index = new_big;
-			while (*big_index == *new_little)
-			{
-				big_index++;
-				new_little++;
-				if (*new_little == 0)
-					return (new_big);
-			}
+			if (compare(&new_big[i], new_little, i, len) == 0)
+				return (&new_big[i]);
 		}
-		new_big++;
+		i++;
 	}
 	return (0);
 }

@@ -27,7 +27,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while ((s1_length - end) != '\0' && ft_strchr(set, s1[s1_length - end]))
 		end++;
 	if (start >= s1_length)
-		return (0);
-	pointer = ft_substr(s1, start, s1_length - end - start + 1);
+		pointer = (char *) malloc(0);
+	else
+		pointer = ft_substr(s1, start, s1_length - end - start + 1);
 	return (pointer);
 }

@@ -9,7 +9,7 @@ int main()
     //test_ft_memset();
     //test_ft_bzero();
     //test_ft_strchr();
-    test_ft_strrchr();
+    //test_ft_strrchr();
     //test_ft_strnstr();
     //test_ft_memcpy();
     //test_ft_memmove();
@@ -22,7 +22,8 @@ int main()
     //test_ft_substr();
     //test_ft_strjoin();
     //test_ft_strtrim();
-    //test_ft_split();
+    //test_ft_strncmp();
+    test_ft_split();
     //test_ft_itoa();
     //test_ft_strmapi();
     //test_ft_striteri();
@@ -30,6 +31,6 @@ int main()
     //test_ft_putstr_fd();
     //test_ft_putendl_fd();
     //test_ft_putnbr_fd();
-    test_nodes();
+    //test_nodes();
     return (0);
 }

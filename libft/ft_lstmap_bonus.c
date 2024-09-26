@@ -13,7 +13,7 @@
 #include "libft.h"
 
 static void	set_new_node(t_list *lst, t_list *next_node,
-						void (*f)(void *), void (*del)(void *))
+						void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_node;
 	t_list	*last_node_lst;
@@ -34,7 +34,7 @@ static void	set_new_node(t_list *lst, t_list *next_node,
 	}
 }
 
-t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*next_node;
@@ -45,7 +45,7 @@ t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *))
 	next_node = lst;
 	while (next_node != NULL)
 	{
-		set_new_node(new_list, next_node, f, del);
+		set_new_node(new_list, next_node, *f, del);
 		next_node = next_node->next;
 	}
 	return (new_list);

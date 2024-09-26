@@ -8,7 +8,9 @@ void	test_my_split(char *s, char *ss, char sss)
 	printf("\n%s\ns1: %s\nc: %c\n", s, ss, sss);
 	while (p[i])
 	{
-		printf("p[%d]: %s %zu\n",i, p[i], ft_strlen(p[i]));
+		write(1, p[i], ft_strlen(p[i]));
+		write(1, "\n", 1);
+		// printf("\np[%d]: %s %zu\n",i, p[i], ft_strlen(p[i]));
 		i++;
 	}
 	printf("\n%p\n", p);
@@ -22,6 +24,8 @@ void	test_ft_split()
 	char *s2 = "my new string going   to be an  array   ";
 	char *s3 = "array";
 	test_my_split("TEST 1",s1, 'X');
-	test_my_split("TEST 2",s2, 32);
+	test_my_split("TEST 2",s2, ' ');
 	test_my_split("TEST 3",s3, 'X');
+	test_my_split("TEST 4", "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+	test_my_split("TEST 3", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", 'X');
 }

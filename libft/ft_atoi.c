@@ -29,7 +29,7 @@ int	ft_atoi(const char *str)
 	is_n = -1;
 	while (*str == ' ' || (*str <= 13 && *str >= 9))
 		str++;
-	if (!ft_isdigit(str[1]))
+	if (!ft_isdigit(str[1]) && !ft_isdigit(str[0]))
 		return (0);
 	while (*str == '-' || *str == '+')
 	{

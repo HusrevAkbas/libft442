@@ -9,8 +9,8 @@ void	test_my_strtrim(char *s, char *ss, char *sss)
 	printf("\n%s\ns1: %s\ns2: %s\nresult: ", s, ss, sss);
 	if (p == 0)
 	{
-		free(p);
-		return;
+		printf("no pointer!!!");
+		return ;
 	}
 	while (p[i])
 		printf("%c",p[i++]);
@@ -24,6 +24,7 @@ void	test_ft_strtrim()
 	// test_my_strtrim("TEST 2", "ieuauieaHOIDAuieauTHEAM", "uiea");
 	// test_my_strtrim("TEST 3", "HOIDAuieauTHEAMa", "uiea");
 	// test_my_strtrim("TEST 4", "ieuauieaHOIDAuieauTHEAMa", "uea");
-	test_my_strtrim("TEST 5", "ieuauieaHOIDAuieauTHEAMa", "uia");
+	test_my_strtrim("TEST 5", "ieuauieaHOIDAuieauTHEAMa", "uiae");
 	test_my_strtrim("TEST 6", "abc", "abcd");
+	test_my_strtrim("TEST 7", "aaaaaaaaaaaaa", "abcd");
 }

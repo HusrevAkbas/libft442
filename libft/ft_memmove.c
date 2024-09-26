@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	move_forward(char *destination, char *source, size_t n)
+static void	move_forward(unsigned char *destination, unsigned char *source, size_t n)
 {
 	while (n > 0)
 	{
@@ -21,7 +21,7 @@ static void	move_forward(char *destination, char *source, size_t n)
 	}
 }
 
-static void	move_backward(char *destination, char *source, size_t n)
+static void	move_backward(unsigned char *destination, unsigned char *source, size_t n)
 {
 	while (n > 0)
 	{
@@ -40,12 +40,12 @@ size_t	set_n(size_t src_len, size_t n)
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*destination;
-	char	*source;
+	unsigned char	*destination;
+	unsigned char	*source;
 	size_t	src_length;
 
-	destination = (char *) dest;
-	source = (char *) src;
+	destination = (unsigned char *) dest;
+	source = (unsigned char *) src;
 	src_length = sizeof(src);
 	if (dest - src < 0)
 		move_forward(destination, source, set_n(src_length, n));

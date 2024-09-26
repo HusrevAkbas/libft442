@@ -30,13 +30,13 @@ static int	count_words(char *s, char c)
 
 static void	clear_mem(char **pointer, int i)
 {
-	while (i >= 0)
+	while (i > 0)
 	{
+		i--;
 		free(pointer[i]);
-		i++;
 	}
 	free(pointer);
-	pointer = NULL;
+	// pointer = 0;
 }
 
 static void	split(char **pointer, char *s, char *c, unsigned int p_i)
@@ -50,13 +50,14 @@ static void	split(char **pointer, char *s, char *c, unsigned int p_i)
 		i++;
 	if (i != 0)
 	{
-		pointer[p_i] = ft_calloc(i, sizeof(char));
+		pointer[p_i] = (char *) malloc(i + 1);
 		if (pointer[p_i] == NULL)
 		{
 			clear_mem(pointer, p_i);
 			return ;
 		}
-		ft_memcpy(pointer[p_i], s, i);
+		if (sizeof(pointer[p_i]) > 1)
+			ft_memcpy(pointer[p_i], s, i);
 	}
 	if (i == ft_strlen(s))
 		return ;
@@ -79,12 +80,10 @@ char	**ft_split(char const *s, char c)
 	str = (char *) s;
 	str = ft_strtrim(str, ch);
 	words = count_words(str, c);
-	pointer = (char **)ft_calloc(words, sizeof(char *));
+	pointer = (char **) malloc((words + 1) * sizeof(char *));
 	if (pointer == NULL)
-	{
-		free(pointer);
 		return (NULL);
-	}
 	split(pointer, str, ch, 0);
+	pointer[words] = NULL;
 	return (pointer);
 }

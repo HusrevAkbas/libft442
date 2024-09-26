@@ -13,15 +13,19 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	*pointer;
+	int		size;
+	int		i;
 
+	i = 0;
+	size = sizeof(s);
 	pointer = (char *) s;
-	while (*pointer)
+	while (i < size)
 	{
-		if (*pointer == c)
-			return (pointer);
-		pointer++;
+		if (pointer[i] == c)
+			return (&pointer[i]);
+		i++;
 	}
-	if (*pointer == '\0' && c == '\0')
-		return (pointer);
+	// if (*pointer == '\0' && c == '\0')
+	// 	return (pointer);
 	return (0);
 }

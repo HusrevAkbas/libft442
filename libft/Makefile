@@ -50,8 +50,8 @@ val:
 clean:
 	rm *.o
 
-fclean:
-	rm -f $(NAME) clean
+fclean: clean
+	rm -f $(NAME)
 	
 re: fclean all
 

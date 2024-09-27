@@ -15,16 +15,13 @@
 char	*ft_strdup(const char *s)
 {
 	char	*pointer;
-	int		i;
+	size_t	i;
 
 	pointer = (char *)malloc(ft_strlen(s) + 1);
 	if (pointer == NULL)
-	{
-		free(pointer);
 		return (NULL);
-	}
 	i = 0;
-	while (s[i])
+	while (i < ft_strlen(s))
 	{
 		pointer[i] = s[i];
 		i++;

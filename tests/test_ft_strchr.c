@@ -7,6 +7,7 @@ void	test_ft_strchr()
     char str1[100] = "my first memset funcmy first memset func";
 
     char str2[100] = "my";
+	printf("t+256: %c\n", ('t'+ 256));
 
 	char *p1 = ft_strchr(str1, 'u');
 	char *p2 = strchr(str1, 'u');
@@ -19,4 +20,8 @@ void	test_ft_strchr()
 	char *p5 = ft_strchr(str2, '\0');
 	char *p6 = strchr(str2, '\0');
 	printf("%p \n%p \n", p5, p6);
+
+	char *p7 = ft_strchr(str1, ('t'+256));
+	char *p8 = strchr(str1, ('t' + 256));
+	printf("%p \n%p \n", p7, p8);
 }

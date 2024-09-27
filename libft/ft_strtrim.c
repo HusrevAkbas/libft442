@@ -20,15 +20,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	end;
 
 	s1_length = ft_strlen(s1);
+	if (ft_strlen(set) == 0 || set == NULL)
+		return (ft_substr(s1, 0, s1_length));
 	start = 0;
 	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
 		start++;
-	end = 1;
-	while ((s1_length - end) != '\0' && ft_strchr(set, s1[s1_length - end]))
+	end = 0;
+	while ((s1_length - end) != 0 && ft_strchr(set, s1[s1_length - 1 - end]))
 		end++;
-	if (start >= s1_length)
-		pointer = (char *) malloc(0);
+	if (start + end >= s1_length)
+	{
+		pointer = (char *) malloc(1);
+		pointer[0] = 0;
+	}
 	else
-		pointer = ft_substr(s1, start, s1_length - end - start + 1);
+		pointer = ft_substr(s1, start, s1_length - end - start);
 	return (pointer);
 }

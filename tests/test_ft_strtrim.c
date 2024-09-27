@@ -20,11 +20,12 @@ void	test_my_strtrim(char *s, char *ss, char *sss)
 
 void	test_ft_strtrim()
 {
-	// test_my_strtrim("TEST 1", "ieuauieaHOIDAuieauTHEAMauieaiuae", "uiea");
-	// test_my_strtrim("TEST 2", "ieuauieaHOIDAuieauTHEAM", "uiea");
-	// test_my_strtrim("TEST 3", "HOIDAuieauTHEAMa", "uiea");
-	// test_my_strtrim("TEST 4", "ieuauieaHOIDAuieauTHEAMa", "uea");
-	test_my_strtrim("TEST 5", "ieuauieaHOIDAuieauTHEAMa", "uiae");
+	test_my_strtrim("TEST 1", "ieuauieaHOIDAuieauTHEAMauieaiuae", "uiea");
+	test_my_strtrim("TEST 2", "ieuauieaHOIDAuieauTHEAM", "uiea");
+	test_my_strtrim("TEST 3", "HOIDAuieauTHEAMa", "uiea");
+	test_my_strtrim("TEST 4", "ieuauieaHOIDAuieauTHEAMa", "uea");
+	test_my_strtrim("TEST 5", "ieuauieaHOIDAuieauTHEAMa", "");
 	test_my_strtrim("TEST 6", "abc", "abcd");
 	test_my_strtrim("TEST 7", "aaaaaaaaaaaaa", "abcd");
+	test_my_strtrim("TEST 8", "i.", "i");
 }

@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-static void	move_forward(unsigned char *destination, unsigned char *source, size_t n)
+static void	move_forward(unsigned char *destination,
+						unsigned char *source, size_t n)
 {
 	while (n > 0)
 	{
@@ -21,7 +22,8 @@ static void	move_forward(unsigned char *destination, unsigned char *source, size
 	}
 }
 
-static void	move_backward(unsigned char *destination, unsigned char *source, size_t n)
+static void	move_backward(unsigned char *destination,
+						unsigned char *source, size_t n)
 {
 	while (n > 0)
 	{

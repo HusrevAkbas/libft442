@@ -12,7 +12,7 @@ int main()
     //test_ft_strrchr();
     //test_ft_strnstr();
     //test_ft_memcpy();
-    //test_ft_memmove();
+    test_ft_memmove();
     //test_ft_memchr();
     //test_ft_memcmp();
     //test_ft_strlcpy();
@@ -23,7 +23,7 @@ int main()
     //test_ft_strjoin();
     //test_ft_strtrim();
     //test_ft_strncmp();
-    test_ft_split();
+    //test_ft_split();
     //test_ft_itoa();
     //test_ft_strmapi();
     //test_ft_striteri();

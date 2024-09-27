@@ -36,13 +36,11 @@ static void	clear_mem(char **pointer, int i)
 		free(pointer[i]);
 	}
 	free(pointer);
-	// pointer = 0;
 }
 
 static void	split(char **pointer, char *s, char *c, unsigned int p_i)
 {
 	unsigned int	i;
-	char			*sub_string;
 	char			*trimmed_sub_string;
 
 	i = 0;
@@ -57,13 +55,16 @@ static void	split(char **pointer, char *s, char *c, unsigned int p_i)
 			return ;
 		}
 		if (sizeof(pointer[p_i]) > 1)
+		{
 			ft_memcpy(pointer[p_i], s, i);
+			pointer[p_i][i] = 0;
+		}
 	}
 	if (i == ft_strlen(s))
 		return ;
-	sub_string = ft_substr(s, i, ft_strlen(s));
-	trimmed_sub_string = ft_strtrim(sub_string, c);
+	trimmed_sub_string = ft_strtrim(&s[i], c);
 	split(pointer, trimmed_sub_string, c, p_i + 1);
+	free(trimmed_sub_string);
 }
 
 char	**ft_split(char const *s, char c)
@@ -75,15 +76,22 @@ char	**ft_split(char const *s, char c)
 
 	ch[0] = c;
 	ch[1] = 0;
-	if (ft_strlen(s) < 2)
-		return (0);
+	if (ft_strlen(s) < 1)
+	{
+		pointer = (char **) malloc(sizeof(char *));
+		pointer[0] = 0;
+		return (pointer);
+	}
 	str = (char *) s;
 	str = ft_strtrim(str, ch);
+	if (str == NULL)
+		return (NULL);
 	words = count_words(str, c);
 	pointer = (char **) malloc((words + 1) * sizeof(char *));
 	if (pointer == NULL)
 		return (NULL);
 	split(pointer, str, ch, 0);
 	pointer[words] = NULL;
+	free(str);
 	return (pointer);
 }

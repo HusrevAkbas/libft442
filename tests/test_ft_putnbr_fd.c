@@ -44,4 +44,5 @@ void	test_ft_putnbr_fd()
 	test_my_putnbr_fd("TEST: int min N", -2147483648);
 	test_my_putnbr_fd("TEST: a lot of zeros P", 2000000000);
 	test_my_putnbr_fd("TEST: a lot of zeros N", -2000000000);
+	test_my_putnbr_fd("TEST: zero 0", 0);
 }

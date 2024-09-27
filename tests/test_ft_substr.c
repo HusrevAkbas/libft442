@@ -15,10 +15,12 @@ void	test_my_substr(char *s, char *ss, unsigned int start, size_t len)
 
 void	test_ft_substr()
 {
-	test_my_substr("TEST 1","LongStringOfMyMen", 5, 10);
-	test_my_substr("TEST 2","LongStringOfMyMen", 3, 1);
-	test_my_substr("TEST 3","ShorterStringOfMyJoyAndHisServants", 0, 100);
-	test_my_substr("TEST 4","ShorterStringOfMyJoyAndHisServants", 10, 100);
-	test_my_substr("TEST 5","ShorterStringOfMyJoyAndHisServants", 5, 15);
+	// test_my_substr("TEST 1","LongStringOfMyMen", 5, 10);
+	// test_my_substr("TEST 2","LongStringOfMyMen", 3, 1);
+	// test_my_substr("TEST 3","ShorterStringOfMyJoyAndHisServants", 0, 100);
+	// test_my_substr("TEST 4","ShorterStringOfMyJoyAndHisServants", 10, 100);
+	// test_my_substr("TEST 5","ShorterStringOfMyJoyAndHisServants", 5, 15);
 	test_my_substr("TEST 6","erStringOfMyJoy", 5, 15);
+	test_my_substr("TEST 7","i", 0, 1);
+	test_my_substr("TEST 8", "lorem ipsum dolor sit amet", 400, 20);
 }

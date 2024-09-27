@@ -15,6 +15,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*pointer;
 	char	*pointer_to_char;
 
+	while (c >= 128)
+		c = c - 128;
 	pointer = (char *) s;
 	pointer_to_char = 0;
 	while (*pointer)
@@ -23,7 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 			pointer_to_char = pointer;
 		pointer++;
 	}
-	if (*pointer == '\0' && c == '\0')
+	if (*pointer == '\0' && c == 0)
 		return (pointer);
 	return (pointer_to_char);
 }

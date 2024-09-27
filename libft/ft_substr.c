@@ -19,13 +19,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 
 	s_length = ft_strlen(s);
+	if (start > s_length)
+		return ((char *) ft_calloc(1, sizeof(char)));
 	if (s_length <= start + len)
 		len = s_length - start;
-	pointer = (char *) malloc(len + 1);
+	pointer = (char *) ft_calloc(len + 1, sizeof(char));
 	if (pointer == NULL)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (len > i && s[start])
 		pointer[i++] = s[start++];

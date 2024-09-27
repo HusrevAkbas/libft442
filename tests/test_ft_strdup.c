@@ -13,7 +13,6 @@ void	test_my_strdup(char *s, char *ss)
 	}
 	printf("\n%p\n", pointer);
 	free(pointer);
-	printf("%d%p\n", pointer[i], pointer);
 	printf("END OF TEST\n\n");
 }
 void	test_or_strdup(char *s, char *ss)
@@ -29,7 +28,6 @@ void	test_or_strdup(char *s, char *ss)
 	}
 	printf("\n%p\n", pointer);
 	free(pointer);
-	printf("%d%p\n", pointer[i], pointer);
 	printf("END OF TEST\n\n");
 }
 

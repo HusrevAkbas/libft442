@@ -9,7 +9,7 @@ void	test_my_strtrim(char *s, char *ss, char *sss)
 	printf("\n%s\ns1: %s\ns2: %s\nresult: ", s, ss, sss);
 	if (p == 0)
 	{
-		printf("no pointer!!!");
+		printf("not my pointer!!!");
 		return ;
 	}
 	while (p[i])

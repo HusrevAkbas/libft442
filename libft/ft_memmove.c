@@ -27,43 +27,23 @@ static void	move_backward(unsigned char *destination,
 {
 	while (n > 0)
 	{
-		*destination-- = *source--;
 		n--;
+		*destination-- = *source--;
 	}
-}
-
-size_t	set_n(size_t src_len, size_t n)
-{
-	if (n > src_len)
-		return (src_len +1);
-	else
-		return (n);
 }
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*destination;
 	unsigned char	*source;
-	size_t	src_length;
 
 	destination = (unsigned char *) dest;
 	source = (unsigned char *) src;
-	src_length = sizeof(src);
+	if (dest == src)
+		return (dest);
 	if (dest - src < 0)
-		move_forward(destination, source, set_n(src_length, n));
+		move_forward(destination, source, n);
 	else
-	{
-		if (n > src_length)
-		{
-			destination += src_length +1;
-			source += src_length +1;
-		}
-		else
-		{
-			destination += n -1;
-			source += n -1;
-		}
-		move_backward(destination, source, n);
-	}
+		move_backward(&destination[n - 1], &source[n - 1], n);
 	return (dest);
 }

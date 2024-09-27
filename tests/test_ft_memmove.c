@@ -2,21 +2,19 @@
 
 void	test_my_memmove(char *str, void *dest, void *src, size_t n)
 {
-	printf("TEST : %s\n\n", str);
+	printf("TEST : %s\n", str);
 	void *ptr1 = ft_memmove(dest, src, n);
-	printf("ft_memmove:\n");
-	printf("dest: %s\n src: %s\n", ptr1, src);
-	// write(1, ptr1, n);
-	// write(1, "\n", n);
+	printf("ft_memmove: %s\n", ptr1);
+	write(1, ptr1, n);
+	write(1, "\n", 1);
 }
 void	test_or_memmove(char *str, void *dest, void *src, size_t n)
 {
 	(void) str;
 	void *ptr2 = memmove(dest, src, n);
-	printf("   memmove:\n");
-	printf("dest: %s\n src: %s\n", ptr2, src);
-	// write(1, ptr2, n);
-	// write(1, "\n", n);
+	printf("   memmove: %s\n", ptr2);
+	write(1, ptr2, n);
+	write(1, "\n", 1);
 }
 void	test_ft_memmove()
 {
@@ -41,8 +39,8 @@ void	test_ft_memmove()
 	test_or_memmove("source starts in destination", str4, &str4[10], 8);
 	test_my_memmove("check different arrays", str5, str7, 20);
 	test_or_memmove("check different arrays", str6, str8, 20);
-	test_my_memmove("dest starts in src", &str3[5], str3, 30);
-	test_or_memmove("dest starts in src", &str4[5], str4, 30);
-	test_my_memmove("\\0 in string", str7, str9, 10);
-	test_or_memmove("\\0 in string", str8, str10, 10);
+	test_my_memmove("dest starts in src", &str3[10], str3, 30);
+	test_or_memmove("dest starts in src", &str4[10], str4, 30);
+	test_my_memmove("\\0 in string", str7, str9, 20);
+	test_or_memmove("\\0 in string", str8, str10, 20);
 }

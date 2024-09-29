@@ -71,6 +71,13 @@ static void	split(char **pointer, char *s, char *c, unsigned int p_i)
 	free(trimmed_sub_string);
 }
 
+static char	**split_of_zero_length(void)
+{
+	char	**pointer;
+	pointer = (char **) malloc(sizeof(char *));
+	pointer[0] = 0;
+	return pointer;
+}
 char	**ft_split(char const *s, char c)
 {
 	char	**pointer;
@@ -81,11 +88,7 @@ char	**ft_split(char const *s, char c)
 	ch[0] = c;
 	ch[1] = 0;
 	if (ft_strlen(s) == 0)
-	{
-		pointer = (char **) malloc(sizeof(char *));
-		pointer[0] = 0;
-		return (pointer);
-	}
+		return (split_of_zero_length());
 	str = (char *) s;
 	str = (char *) ft_strtrim(str, ch);
 	if (str == NULL)

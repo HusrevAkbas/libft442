@@ -17,8 +17,12 @@ static int	count_words(char *s, char c)
 	int	i;
 	int	word;
 
+	if (ft_strlen(s) == 0)
+		return (0);
 	i = 0;
-	word = 1;
+	word = 0;
+	if (s[i] != c)
+		word++;
 	while (s[i +1])
 	{
 		if (s[i] == c && s[i + 1] != c)
@@ -62,7 +66,7 @@ static void	split(char **pointer, char *s, char *c, unsigned int p_i)
 	}
 	if (i == ft_strlen(s))
 		return ;
-	trimmed_sub_string = ft_strtrim(&s[i], c);
+	trimmed_sub_string = (char *) ft_strtrim(&s[i], c);
 	split(pointer, trimmed_sub_string, c, p_i + 1);
 	free(trimmed_sub_string);
 }
@@ -83,13 +87,16 @@ char	**ft_split(char const *s, char c)
 		return (pointer);
 	}
 	str = (char *) s;
-	str = ft_strtrim(str, ch);
+	str = (char *) ft_strtrim(str, ch);
 	if (str == NULL)
 		return (NULL);
 	words = count_words(str, c);
 	pointer = (char **) malloc((words + 1) * sizeof(char *));
 	if (pointer == NULL)
+	{
+		free(str);
 		return (NULL);
+	}
 	split(pointer, str, ch, 0);
 	pointer[words] = NULL;
 	free(str);

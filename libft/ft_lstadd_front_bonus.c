@@ -25,7 +25,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		(*lst)->next = NULL;
 		return ;
 	}
-	
 	next_node = *lst;
 	copy = next_node;
 	node = new;
@@ -40,5 +39,4 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new_node = ft_lstnew(copy->content);
 	next_node->content = node->content;
 	next_node->next = new_node;
-
 }

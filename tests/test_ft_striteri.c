@@ -2,10 +2,8 @@
 
 void	test_my_striteri(char *s, char *ss, void (*sss)(unsigned int, char*))
 {
-	int		i;
 	printf("\n%s\nbefore: %s\n", s, ss);
 	ft_striteri(ss, sss);
-	i = 0;
 	printf("\n%s\nafter : %s\n", s, ss);
 }
 

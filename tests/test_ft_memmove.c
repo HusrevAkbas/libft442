@@ -4,7 +4,7 @@ void	test_my_memmove(char *str, void *dest, void *src, size_t n)
 {
 	printf("TEST : %s\n", str);
 	void *ptr1 = ft_memmove(dest, src, n);
-	printf("ft_memmove: %s\n", ptr1);
+	printf("ft_memmove: %s\n", (char *) ptr1);
 	write(1, ptr1, n);
 	write(1, "\n", 1);
 }
@@ -12,7 +12,7 @@ void	test_or_memmove(char *str, void *dest, void *src, size_t n)
 {
 	(void) str;
 	void *ptr2 = memmove(dest, src, n);
-	printf("   memmove: %s\n", ptr2);
+	printf("   memmove: %s\n", (char *) ptr2);
 	write(1, ptr2, n);
 	write(1, "\n", 1);
 }

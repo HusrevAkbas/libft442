@@ -9,27 +9,27 @@ void	test_ft_strnstr()
     char str2[100] = "";
 
 	char *p1 = ft_strnstr(str1, str2, 50);
-	char *p2 = strnstr(str1, str2, 50);
+	char *p2 = ft_strnstr(str1, str2, 50);
 	printf("ft_func : %p\n   func : %p\n", p1, p2);
 	printf("ft_func : %s\n   func : %s\n", p1, p2);
 
 	p1 = ft_strnstr("lorem ipsum dolor sit amet", "sit", 10);
-	p2 = strnstr("lorem ipsum dolor sit amet", "sit", 10);
+	p2 = ft_strnstr("lorem ipsum dolor sit amet", "sit", 10);
 	printf("ft_func : %p\n   func : %p\n", p1, p2);
 	printf("ft_func : %s\n   func : %s\n", p1, p2);
 
 	p1 = ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15);
-	p2 = strnstr("lorem ipsum dolor sit amet", "dolor", 15);
+	p2 = ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15);
 	printf("ft_func : %p\n   func : %p\n", p1, p2);
 	printf("ft_func : %s\n   func : %s\n", p1, p2);
 
 	p1 = ft_strnstr(str1, "stfu", 50);
-	p2 = strnstr(str1, "stfu", 50);
+	p2 = ft_strnstr(str1, "stfu", 50);
 	printf("ft_func : %p\n   func : %p\n", p1, p2);
 	printf("ft_func : %s\n   func : %s\n", p1, p2);
 
 	p1 = ft_strnstr(str1, "dd", 50);
-	p2 = strnstr(str1, "dd", 50);
+	p2 = ft_strnstr(str1, "dd", 50);
 	printf("ft_func : %p\n   func : %p\n", p1, p2);
 	printf("ft_func : %s\n   func : %s\n", p1, p2);
 }

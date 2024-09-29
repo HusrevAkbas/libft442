@@ -12,6 +12,8 @@ void	test_my_strtrim(char *s, char *ss, char *sss)
 		printf("not my pointer!!!");
 		return ;
 	}
+	else
+		printf("len: %zu\n", ft_strlen(p));
 	while (p[i])
 		printf("%c",p[i++]);
 	printf("\n%p\n", p);

@@ -38,6 +38,6 @@ void	test_ft_memcpy()
 
 	char *dest[100];
 
-	memset(dest,'A', 100);
+	memset(dest,'A', 99);
 	test_my_memcpy("test franki", dest, "coucou", 0);
 }

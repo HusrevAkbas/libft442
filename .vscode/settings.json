@@ -11,5 +11,8 @@
         "limits.h": "c"
     },
     "editor.detectIndentation": true,
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.autoSave": "afterDelay",
+    "editor.renderWhitespace": "all"
 }

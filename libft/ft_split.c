@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 
 	ch[0] = c;
 	ch[1] = 0;
-	if (ft_strlen(s) < 1)
+	if (ft_strlen(s) == 0)
 	{
 		pointer = (char **) malloc(sizeof(char *));
 		pointer[0] = 0;

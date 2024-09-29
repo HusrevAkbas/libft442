@@ -74,10 +74,12 @@ static void	split(char **pointer, char *s, char *c, unsigned int p_i)
 static char	**split_of_zero_length(void)
 {
 	char	**pointer;
+
 	pointer = (char **) malloc(sizeof(char *));
 	pointer[0] = 0;
-	return pointer;
+	return (pointer);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**pointer;

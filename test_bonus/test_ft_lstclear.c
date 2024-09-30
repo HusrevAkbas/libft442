@@ -2,48 +2,26 @@
 
 void	test_ft_lstclear()
 {
-	t_list	*list;
-	t_list	*list2;
-	t_list	*list3;
-	t_list	*list4;
-	char	*str;
-	char	*str2;
-	char	*str3;
-	char	*str4;
+	t_list	*list  = (t_list *) ft_lstnew(ft_strdup("Node 1"));
 
-	str = (char *) malloc(50);
-	str2 = (char *) malloc(50);
+	ft_lstclear(&list, free);
 
-	str3 = (char *) malloc(50);
-	str4 = (char *) malloc(50);
-	ft_memcpy(str, "head 1", 50);
-	ft_memcpy(str2, "node 2", 50);
+	// t_list	*list2 = (t_list *) ft_lstnew(ft_strdup("Node 2"));
+	// t_list	*list3 = (t_list *) ft_lstnew(ft_strdup("Node 3"));
+	// t_list	*list4 = (t_list *) ft_lstnew(ft_strdup("Node 4"));
 
-	list = ft_lstnew(str);
-	list2 = ft_lstnew(str2);
+	// ft_lstadd_back(&list, list2);
+	// ft_lstadd_back(&list, list3);
+	// ft_lstadd_back(&list, list4);
 
-	ft_memcpy(str3, "node 3", 50);
-	ft_memcpy(str4, "node 4", 50);
+	// printf("list p: %p, content ? : %s, next p: %p\n", list, list->content ? (char *) list->content : "no content", list->next);
+	// printf("list p: %p, content ? : %s, next p: %p\n", list2, list2->content ? (char *) list2->content : "no content", list2->next);
+	// printf("list p: %p, content ? : %s, next p: %p\n", list3, list3->content ? (char *) list3->content : "no content", list3->next);
+	// printf("list p: %p, content ? : %s, next p: %p\n", list4, list4->content ? (char *) list4->content : "no content", list4->next);
 
-	list3 = ft_lstnew(str3);
-	list4 = ft_lstnew(str4);
+	// ft_lstclear(&list3, free);
 
-
-	if (list != NULL && list2 != NULL && list3 != NULL && list4 != NULL)
-	{
-		printf("last: %s\n", (char *) ft_lstlast(list)->content);
-		ft_lstadd_back(&list, list2);
-		printf("last: %s\n", (char *) ft_lstlast(list)->content);
-		ft_lstadd_back(&list, list3);
-		printf("last: %s\n", (char *) ft_lstlast(list)->content);
-		ft_lstadd_back(&list, list4);
-		printf("last: %s\n", (char *) ft_lstlast(list)->content);
-		//ft_lstclear(&list, ft_lstdeletecontent);
-		printf("list  pointer %p\n", (t_list *) list);
-		printf("list2 pointer %p\n", (t_list *) list2);
-		printf("list3 pointer %p\n", (t_list *) list3);
-		printf("list4 pointer %p\n", (t_list *) list4);
-	}
-	else
-		printf("there is a NULL list");
+	// printf("list p: %p, content ? : %s, next p: %p\n", list, list->content ? (char *) list->content : "no content", list->next);
+	// printf("list p: %p, content ? : %s, next p: %p\n", list2, list2->content ? (char *) list2->content : "no content", list2->next);
+	// printf("list p: %p, content ? : %s, next p: %p\n", list3, list3->content ? (char *) list3->content : "no content", list3->next);
 }

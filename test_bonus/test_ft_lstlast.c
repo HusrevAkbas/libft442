@@ -38,7 +38,7 @@ void	test_ft_lstlast()
 		printf("head: %s , last: %s\n", (char *) list->content, (char *) ft_lstlast(list)->content);
 		ft_lstadd_back(&list, list4);
 		printf("head: %s , last: %s\n", (char *) list->content, (char *) ft_lstlast(list)->content);
-		ft_lstclear(&list, ft_lstdeletecontent);
+		ft_lstclear(&list, free);
 	}
 	else
 		printf("there is a NULL list");

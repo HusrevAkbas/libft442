@@ -34,10 +34,10 @@ void	test_ft_lstdelone()
 		ft_lstadd_back(&list, list2);
 		ft_lstadd_back(&list, list3);
 		printf("list2: %s\n", (char *) list2->content);
-		ft_lstdelone(list2, ft_lstdeletecontent);
+		ft_lstdelone(list2, free);
 		// printf("list2: %s\n", (char *) list2->content);
 		// printf("is list2 NULL: %s\n", (char *) list2->next->content);
-		//ft_lstclear(&list, ft_lstdeletecontent);
+		//ft_lstclear(&list, free);
 	}
 	else
 		printf("there is a NULL list");

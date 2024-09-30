@@ -11,7 +11,7 @@ void	test_ft_lstnew()
 	{
 		printf ("list content : %s\n", (char *) list->content);
 		printf("is next null      : %d\n", list->next == NULL);
-		//ft_lstclear(&list, ft_lstdeletecontent);
+		//ft_lstclear(&list, free);
 	}
 	else
 		printf("there is a NULL list");

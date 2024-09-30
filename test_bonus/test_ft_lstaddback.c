@@ -19,5 +19,5 @@ void	test_ft_lstadd_back()
 	printf("list 2 con: %s, list 2 p: %p, list 2 next p: %p\n", (char *)list2->content, list2, list2->next);
 	printf("list 3 con: %s, list 3 p: %p, list 3 next p: %p\n", (char *)list3->content, list3, list3->next);
 
-	printf("l1: %s, l2: %s, l3: %s", list1->content, list1->next->content, ft_lstlast(list1)->content);
+	printf("l1: %s, l2: %s, l3: %s", (char *) list1->content, (char *) list1->next->content, (char *) ft_lstlast(list1)->content);
 }

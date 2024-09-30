@@ -40,7 +40,7 @@ void	test_ft_lstsize()
 		// printf("is first member next pointer equal to second member pointer: %d\n", list->next == list2);
 		// printf("second member content: %s\n", (char *) list->next->content);
 		// printf("is second member next NULL : %d\n", list2->next == NULL);
-		ft_lstclear(&list, ft_lstdeletecontent);
+		ft_lstclear(&list, free);
 	}
 	else
 		printf("there is a NULL list");

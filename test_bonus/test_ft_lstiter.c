@@ -75,7 +75,7 @@ void	test_ft_lstiter()
 		printf("last: %s\n", (char *) list2->content);
 		printf("last: %s\n", (char *) list3->content);
 		printf("last: %s\n", (char *) list4->content);
-		//ft_lstclear(&list, ft_lstdeletecontent);
+		//ft_lstclear(&list, free);
 	}
 	else
 		printf("there is a NULL list");

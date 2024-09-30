@@ -2,10 +2,15 @@
 
 void	test_ft_lstadd_front()
 {
-	t_list	**lst = NULL;
+	t_list	*lst = NULL;
 	t_list	*l = ft_lstnew(ft_strdup("l head"));
+	t_list	*n = ft_lstnew(ft_strdup("l last"));
 
-	write(1, l->content, 10);
-	ft_lstadd_front(lst, l);
-	write(1, (*lst)->content, 10);
+printf("l con: %s\n", (char *) l->content);
+	ft_lstadd_front(&lst, l);
+printf("lst null ? %d\n", lst == NULL);
+printf("lst con : %s\n", (char *) lst->content);
+	ft_lstadd_front(&lst, n);
+printf("lst null ? %d\n", lst == NULL);
+printf("lst con : %s\n", (char *) lst->next->content);
 }

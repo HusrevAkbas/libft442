@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	count_chars(int n)
+static int	count_chars(int n)
 {
 	int	count;
 
@@ -27,7 +27,7 @@ int	count_chars(int n)
 	return (count);
 }
 
-void	set_mem(char *pointer, int n, int index)
+static void	set_mem(char *pointer, int n, int index)
 {
 	int	last_digit;
 

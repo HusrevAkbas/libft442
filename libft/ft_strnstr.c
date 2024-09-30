@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	compare(char *str1, char *str2, size_t i, size_t len)
+static int	compare(char *str1, char *str2, size_t i, size_t len)
 {
 	if (i + ft_strlen(str2) > len)
 		return (-1);

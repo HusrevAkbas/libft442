@@ -12,19 +12,16 @@
 
 #include "libft.h"
 
-void	delete_list(t_list *list, void (*del)(void *))
-{
-	if (list == NULL)
-		return ;
-	delete_list(list->next, del);
-	ft_lstdelone(list, del);
-}
-
 void	ft_lstclear(t_list **list, void (*del)(void *))
 {
-	t_list	*temp;
-
-	temp = *list;
-	delete_list(temp, del);
-	list = NULL;
+	t_list	*head;
+	t_list	*next_node;
+	
+	head = *list;
+	next_node = head->next;
+	while (next_node->next)
+		ft_lstclear(&(next_node), del);
+	ft_lstdelone(next_node, del);
+	head->next = NULL;
+	ft_lstdelone(head, del);
 }

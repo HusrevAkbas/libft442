@@ -39,10 +39,10 @@ void	test_ft_lstclear()
 		ft_lstadd_back(&list, list4);
 		printf("last: %s\n", (char *) ft_lstlast(list)->content);
 		//ft_lstclear(&list, ft_lstdeletecontent);
-		printf("list  pointer %p\n", list);
-		printf("list2 pointer %p\n", list2);
-		printf("list3 pointer %p\n", list3);
-		printf("list4 pointer %p\n", list4);
+		printf("list  pointer %p\n", (t_list *) list);
+		printf("list2 pointer %p\n", (t_list *) list2);
+		printf("list3 pointer %p\n", (t_list *) list3);
+		printf("list4 pointer %p\n", (t_list *) list4);
 	}
 	else
 		printf("there is a NULL list");

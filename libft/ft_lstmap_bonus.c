@@ -11,42 +11,41 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	set_node(t_list *lst, t_list *next_node,
-					void *(*f)(void *), void (*del)(void *))
+/* Iterates the list ’lst’ and applies the function 
+’f’ on the content of each node.Creates a new list 
+resulting of the successive applications of the 
+function ’f’.The ’del’ function is used to delete 
+the content of a node if needed */
+t_list	*set_new_node(t_list *lst, void *(*f)(void *))
 {
 	t_list	*new_node;
-	t_list	*last_node_lst;
+	void	*new_content;
 
-	new_node = ft_lstnew(next_node->content);
+	new_content = f(lst->content);
+	new_node = (t_list *) ft_lstnew(new_content);
 	if (new_node == NULL)
-	{
-		ft_lstclear(&lst, del);
-		return ;
-	}
-	f(new_node->content);
-	if (lst == NULL)
-		lst = new_node;
-	else
-	{
-		last_node_lst = ft_lstlast(lst);
-		last_node_lst->next = new_node;
-	}
+		return (NULL);
+	return (new_node);
 }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*next_node;
+	t_list	*new_node;
 
-	new_list = NULL;
 	if (lst == NULL)
 		return (NULL);
-	next_node = lst;
-	while (next_node != NULL)
+	new_list = NULL;
+	while (lst != NULL)
 	{
-		set_node(new_list, next_node, *f, del);
-		next_node = next_node->next;
+		new_node = set_new_node(lst, f);
+		if (new_node == NULL)
+		{
+			ft_lstclear(&new_list, del);
+			return (new_list);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
 	return (new_list);
 }

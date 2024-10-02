@@ -20,8 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	end;
 
 	s1_length = ft_strlen(s1);
-	if (ft_strlen(set) == 0 || set == NULL)
-		return (ft_substr(s1, 0, s1_length));
+	if (set == NULL || ft_strlen(set) == 0)
+		return ((char *) ft_substr(s1, 0, s1_length));
 	start = 0;
 	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
 		start++;
@@ -31,9 +31,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (start + end >= s1_length)
 	{
 		pointer = (char *) malloc(1);
+		if (pointer == NULL)
+			return (NULL);
 		pointer[0] = 0;
 	}
 	else
-		pointer = ft_substr(s1, start, s1_length - end - start);
+		pointer = (char *) ft_substr(s1, start, s1_length - end - start);
 	return (pointer);
 }

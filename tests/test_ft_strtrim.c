@@ -28,6 +28,6 @@ void	test_ft_strtrim()
 	test_my_strtrim("TEST 4", "ieuauieaHOIDAuieauTHEAMa", "uea");
 	test_my_strtrim("TEST 5", "ieuauieaHOIDAuieauTHEAMa", "");
 	test_my_strtrim("TEST 6", "abc", "abcd");
-	test_my_strtrim("TEST 7", "aaaaaaaaaaaaa", "abcd");
+	test_my_strtrim("TEST 7", "aaaaaaaaaaaaa", "a");
 	test_my_strtrim("TEST 8", "i.", "i");
 }

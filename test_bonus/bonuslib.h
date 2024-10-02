@@ -7,3 +7,4 @@ void	test_ft_lstlast();
 void	test_ft_lstdelone();
 void	test_ft_lstclear();
 void	test_ft_lstiter();
+void	test_ft_lstmap();

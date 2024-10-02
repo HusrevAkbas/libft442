@@ -53,7 +53,7 @@ char	*ft_itoa(int n)
 		last_digit *= -1;
 		count_char += 1;
 	}
-	pointer = ft_calloc(count_char + 1, sizeof(char));
+	pointer = (char *) ft_calloc(count_char + 1, sizeof(char));
 	if (pointer == NULL)
 		return (NULL);
 	if (count_char > 1)

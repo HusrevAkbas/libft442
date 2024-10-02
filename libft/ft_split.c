@@ -91,8 +91,7 @@ char	**ft_split(char const *s, char c)
 	ch[1] = 0;
 	if (ft_strlen(s) == 0)
 		return (split_of_zero_length());
-	str = (char *) s;
-	str = (char *) ft_strtrim(str, ch);
+	str = (char *) ft_strtrim(s, ch);
 	if (str == NULL)
 		return (NULL);
 	words = count_words(str, c);
@@ -103,7 +102,21 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	}
 	split(pointer, str, ch, 0);
-	pointer[words] = NULL;
+	if (pointer != NULL)
+		pointer[words] = NULL;
 	free(str);
 	return (pointer);
 }
+// int main(void)
+// {
+// 	char **p;
+// 	int i = 0;
+
+// 	p = ft_split("some values to delimitered bym", 'm');
+// 	while (p[i])
+// 	{
+// 		free(p[i]);
+// 		i++;
+// 	}
+// 	free(p);
+// }

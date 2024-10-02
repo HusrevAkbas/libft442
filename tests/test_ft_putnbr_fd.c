@@ -38,6 +38,12 @@ void	test_ft_putnbr_fd()
 	// {
 	// 	test_my_putnbr_fd("my test of", i++);
 	// }
+	test_my_putnbr_fd("TEST: positiv", 2);
+	test_my_putnbr_fd("TEST: negative", -2);
+	test_my_putnbr_fd("TEST: positiv", 22);
+	test_my_putnbr_fd("TEST: negative", -22);
+	test_my_putnbr_fd("TEST: positiv", 222);
+	test_my_putnbr_fd("TEST: negative", -222);
 	test_my_putnbr_fd("TEST: positiv", 21474836);
 	test_my_putnbr_fd("TEST: negative", -21474836);
 	test_my_putnbr_fd("TEST: int max P", 2147483647);

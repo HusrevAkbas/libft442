@@ -17,8 +17,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*str;
 	unsigned char	ch;
 
-	while (c > 256)
-		c = c - 256;
 	ch = (unsigned char) c;
 	str = (unsigned char *) s;
 	while (n > 0)
@@ -28,5 +26,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		str++;
 		n--;
 	}
-	return (0);
+	return (NULL);
 }

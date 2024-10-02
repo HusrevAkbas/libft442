@@ -19,7 +19,7 @@ t_list	*set_new_node(t_list *lst, void *(*f)(void *))
 	t_list	*new_node;
 	void	*new_content;
 
-	new_content = ft_strdup(lst->content);
+	new_content = (char *) ft_strdup(lst->content);
 	if (new_content == NULL)
 		return (NULL);
 	new_content = f(new_content);

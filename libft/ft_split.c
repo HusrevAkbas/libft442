@@ -71,17 +71,6 @@ static char	*split(char *s, char c, int word)
 	return (new_word);
 }
 
-static char	**split_of_zero_length(void)
-{
-	char	**pointer;
-
-	pointer = (char **) malloc(sizeof(char *));
-	if (pointer == NULL)
-		return (NULL);
-	pointer[0] = 0;
-	return (pointer);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**pointer;
@@ -91,8 +80,6 @@ char	**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	if (ft_strlen(s) == 0)
-		return (split_of_zero_length());
 	str = (char *) s;
 	words = count_words(str, c);
 	pointer = (char **) malloc((words + 1) * sizeof(char *));

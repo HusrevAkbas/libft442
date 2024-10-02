@@ -63,7 +63,7 @@ static char	*split(char *s, char c, int word)
 	}
 	if (count_c == ft_strlen(s))
 		return (NULL);
-	new_word = (char *) ft_calloc(i - count_c + 1, sizeof(char));
+	new_word = (char *) malloc((i - count_c + 1) * sizeof(char));
 	if (new_word == NULL)
 		return (NULL);
 	ft_memcpy(new_word, &s[count_c], i - count_c);
@@ -109,6 +109,6 @@ char	**ft_split(char const *s, char c)
 		}
 		index++;
 	}
-		pointer[words] = NULL;
+	pointer[words] = NULL;
 	return (pointer);
 }

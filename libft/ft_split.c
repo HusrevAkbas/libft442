@@ -36,6 +36,7 @@ static void	clear_mem(char **pointer, int i)
 {
 	while (i > 0)
 	{
+		printf("word: %i | addr: %p\n",i, pointer[i]);
 		i--;
 		free(pointer[i]);
 	}
@@ -75,6 +76,8 @@ static char	**split_of_zero_length(void)
 	char	**pointer;
 
 	pointer = (char **) malloc(sizeof(char *));
+	if (pointer == NULL)
+		return (NULL);
 	pointer[0] = 0;
 	return (pointer);
 }
@@ -97,6 +100,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	index = 0;
 	split(pointer, str, c, &index);
+	//printf("after split - word: %i | ptr addr: %p | words addr: %p\n", words, pointer, pointer[words]);
 	if (index == -1)
 		clear_mem(pointer, words);
 	if (pointer != NULL)

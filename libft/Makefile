@@ -29,10 +29,10 @@ ${NAME}: ${OBJECTFILES}
 	ar rcs $@ ${OBJECTFILES}
 
 ${OBJECTFILES}: ${SRCFILES}
-	cc -c $(CFLAGS) ${SRCFILES}
+	cc -g -c $(CFLAGS) ${SRCFILES}
 
 ${BONUSOBJECTFILES}: ${BONUSFILES}
-	cc -c $(CFLAGS) ${BONUSFILES}
+	cc -g -c $(CFLAGS) ${BONUSFILES}
 
 bonus: ${NAME} ${BONUSOBJECTFILES}
 	ar rs ${NAME} ${BONUSOBJECTFILES}
@@ -44,7 +44,7 @@ bonus: ${NAME} ${BONUSOBJECTFILES}
 #	cc $(CFLAGS) -c $(SRCFILES) -o %.o
 
 val:
-	valgrind -s --leak-check=full --show-leak-kinds=all cc -c ${CFLAGS} ${SRCFILES} ${Bo}
+	valgrind -s --leak-check=full --show-leak-kinds=all cc -g -c ${CFLAGS} ${SRCFILES} ${Bo}
 	${MAKE} clean
 
 clean:

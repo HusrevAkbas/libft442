@@ -5,7 +5,7 @@ SRC := $(wildcard test*/*.c)# $(wildcard tests_bonus/*.c)
 all:
 	$(MAKE) -C ${LIBFT} bonus
 #	valgrind -s --leak-check=full --show-leak-kinds=all 
-	cc ${CFLAGS} ${SRC} test.c -L ${LIBFT} -lft -lbsd -o ${TARGET}
+	cc -g ${CFLAGS} ${SRC} test.c -L ${LIBFT} -lft -lbsd -o ${TARGET}
 	./${TARGET}
 
 clean:

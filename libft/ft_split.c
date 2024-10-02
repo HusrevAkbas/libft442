@@ -34,41 +34,41 @@ static int	count_words(char *s, char c)
 
 static void	clear_mem(char **pointer, int i)
 {
-	while (i > 0)
+	while (i >= 0)
 	{
-		printf("word: %i | addr: %p\n",i, pointer[i]);
+		if (pointer[i])
+			free(pointer[i]);
 		i--;
-		free(pointer[i]);
 	}
 	free(pointer);
 	pointer = NULL;
 }
 
-static void	split(char **pointer, char *s, char c, int *p_i)
+static char	*split(char *s, char c, int word)
 {
 	size_t	i;
 	size_t	count_c;
+	char	*new_word;
 
 	i = 0;
 	count_c = 0;
-	while (s[i] != 0 && s[i++] == c)
-		count_c++;
-	while (s[i] != 0 && s[i] != c)
-		i++;
-	if (count_c == ft_strlen(s))
-		return ;
-	pointer[*p_i] = (char *) malloc(i - count_c + 1);
-	if (pointer[*p_i] == NULL)
+	while (word >= 0)
 	{
-		*p_i = -1;
-		return ;
+		count_c = i;
+		while (s[i] != 0 && s[i++] == c)
+			count_c++;
+		while (s[i] != 0 && s[i] != c)
+			i++;
+		word--;
 	}
-	ft_memcpy(pointer[*p_i], &s[count_c], i - count_c);
-	pointer[*p_i][i - count_c] = 0;
-	if (i == ft_strlen(s))
-		return ;
-	*p_i += 1;
-	split(pointer, &s[i], c, p_i);
+	if (count_c == ft_strlen(s))
+		return (NULL);
+	new_word = (char *) ft_calloc(i - count_c + 1, sizeof(char));
+	if (new_word == NULL)
+		return (NULL);
+	ft_memcpy(new_word, &s[count_c], i - count_c);
+	new_word[i - count_c] = 0;
+	return (new_word);
 }
 
 static char	**split_of_zero_length(void)
@@ -99,24 +99,16 @@ char	**ft_split(char const *s, char c)
 	if (pointer == NULL)
 		return (NULL);
 	index = 0;
-	split(pointer, str, c, &index);
-	//printf("after split - word: %i | ptr addr: %p | words addr: %p\n", words, pointer, pointer[words]);
-	if (index == -1)
-		clear_mem(pointer, words);
-	if (pointer != NULL)
+	while (words > index)
+	{
+		pointer[index] = split(str, c, index);
+		if (pointer[index] == NULL)
+		{
+			clear_mem(pointer, words);
+			return (NULL);
+		}
+		index++;
+	}
 		pointer[words] = NULL;
 	return (pointer);
 }
-// int main(void)
-// {
-// 	char **p;
-// 	int i = 0;
-
-// 	p = ft_split("some values to delimitered bym", 'm');
-// 	while (p[i])
-// 	{
-// 		free(p[i]);
-// 		i++;
-// 	}
-// 	free(p);
-// }

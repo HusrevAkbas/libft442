@@ -38,7 +38,7 @@ static void	set_num(char *str, int n, int index)
 	str[index] = '0' + last_digit;
 }
 
-static char	*itoa(char *str, int n)
+static void	itoa(char *str, int n)
 {
 	int	last_digit;
 	int	sign;
@@ -59,7 +59,6 @@ static char	*itoa(char *str, int n)
 		set_num(str, (n / 10) * sign, count_char - 2);
 	str[count_char - 1] = '0' + last_digit;
 	str[count_char] = '\0';
-	return (str);
 }
 
 void	ft_putnbr_fd(int n, int fd)

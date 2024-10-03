@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	s2_length;
 	unsigned int	i;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	s1_length = ft_strlen(s1);
 	s2_length = ft_strlen(s2);
 	pointer = malloc(s1_length + s2_length + 1);

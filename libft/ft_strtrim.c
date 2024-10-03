@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+char	*no_trim_str(void)
+{
+	char	*ptr;
+
+	ptr = (char *) malloc(1);
+	if (ptr == NULL)
+		return (NULL);
+	ptr[0] = 0;
+	return (ptr);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*pointer;
@@ -19,6 +30,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	start;
 	unsigned int	end;
 
+	if (s1 == NULL)
+		return (NULL);
 	s1_length = ft_strlen(s1);
 	if (set == NULL || ft_strlen(set) == 0)
 		return ((char *) ft_substr(s1, 0, s1_length));
@@ -29,13 +42,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while ((s1_length - end) != 0 && ft_strchr(set, s1[s1_length - 1 - end]))
 		end++;
 	if (start + end >= s1_length)
-	{
-		pointer = (char *) malloc(1);
-		if (pointer == NULL)
-			return (NULL);
-		pointer[0] = 0;
-	}
+		return (no_trim_str());
 	else
 		pointer = (char *) ft_substr(s1, start, s1_length - end - start);
+	if (pointer == NULL)
+		return (NULL);
 	return (pointer);
 }

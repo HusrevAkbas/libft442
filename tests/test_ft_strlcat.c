@@ -33,15 +33,9 @@ str3[0] = 'B';
 	printf("%s\n",str3);
 	printf("ft_func : %zu\n   func : %zu\n", p1, p2);
 
-	p2 = strlcat(str1, "", 50);
+	p2 = strlcat(str1, "", 5);
 	printf("%s\n",str1);
-	p1 = ft_strlcat(str3, "", 50);
-	printf("%s\n",str3);
-	printf("ft_func : %zu\n   func : %zu\n", p1, p2);
-
-	p2 = strlcat(str1, "", 50);
-	printf("%s\n",str1);
-	p1 = ft_strlcat(str3, "", 50);
+	p1 = ft_strlcat(str3, "", 5);
 	printf("%s\n",str3);
 	printf("ft_func : %zu\n   func : %zu\n", p1, p2);
 
@@ -54,6 +48,12 @@ str3[0] = 'B';
 	p2 = strlcat(str1, str2, 18);
 	printf("%s\n",str1);
 	p1 = ft_strlcat(str3, str4, 18);
+	printf("%s\n",str3);
+	printf("ft_func : %zu\n   func : %zu\n", p1, p2);
+	
+	p2 = strlcat(str1, "\b\b\b\b\baaa", 38);
+	printf("%s\n",str1);
+	p1 = ft_strlcat(str3, "\b\b\b\b\baaa", 38);
 	printf("%s\n",str3);
 	printf("ft_func : %zu\n   func : %zu\n", p1, p2);
 }

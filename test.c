@@ -16,7 +16,7 @@ int main()
     // test_ft_memchr();
     // test_ft_memcmp();
     // test_ft_strlcpy();
-    // test_ft_strlcat();
+    test_ft_strlcat();
     // test_ft_calloc();
     // test_ft_strdup();
     // test_ft_substr();
@@ -30,7 +30,7 @@ int main()
     // test_ft_putchar_fd();
     // test_ft_putstr_fd();
     // test_ft_putendl_fd();
-    test_ft_putnbr_fd();
+    // test_ft_putnbr_fd();
     //test_nodes();
     return (0);
 }

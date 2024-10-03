@@ -32,77 +32,68 @@ static int	count_words(char *s, char c)
 	return (word);
 }
 
-static char	**clear_mem(char **pointer, int i)
+static void	clear_mem(char **pointer, int i)
 {
 	while (i >= 0)
 	{
-// printf("clear mem: %p  i: %i, p[i]: %p\n", pointer, i, pointer[i]);
 		free(pointer[i]);
-// printf("clear mem: %p  i: %i\n", pointer, i);
 		i--;
 	}
-// printf("clear mem after while: %p  i: %i\n", pointer, i);
 	free(pointer);
 	pointer = NULL;
-	return (pointer);
 }
 
-static char	**split(char **pointer, char *s, char c, size_t word)
+static char	*split(char *s, char c, int word)
 {
 	size_t	i;
 	size_t	count_c;
-	size_t	index;
+	char	*new_word;
 
+	i = 0;
 	if (!s && !*s)
 		return (NULL);
-	i = 0;
-	index = 0;
-// printf("before while --- word: %zu, index: %zu, s: %s, c: %c\n", word, index, s, c);
-	while (word > index)
+	while (word >= 0)
 	{
 		count_c = i;
-		while (s[i] != 0 && s[i] == c)
-		{
+		while (s[i] != 0 && s[i++] == c)
 			count_c++;
-			i++;
-		}
 		while (s[i] != 0 && s[i] != c)
 			i++;
-// printf("after count count: %zu, i: %zu sc: %s, si: %s\n", count_c, i, &s[count_c], &s[i]);
-// printf("i got new word %p pointer p %p, pointer[index]%p\n", new_word, pointer, pointer[index]);
-		pointer[index] = ft_substr(s, count_c, i - count_c);
-		if (pointer[index] == NULL)
-		{
-			pointer = clear_mem(pointer, index);
-			return (pointer);
-		}
-		index++;
-// printf("after while: new: %s\n", new_word);
+		word--;
 	}
-	pointer[word] = NULL;
-	return (pointer);
+	if (count_c == ft_strlen(s))
+		return (NULL);
+	new_word = ft_substr(s, count_c, i - count_c);
+	if (new_word == NULL)
+		return (NULL);
+	return (new_word);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**pointer;
 	char	*str;
-	size_t	words;
+	int		words;
+	int		index;
 
 	if (s == NULL)
 		return (NULL);
-	str = (char *)s;
+	str = (char *) s;
 	words = count_words(str, c);
 	pointer = (char **) malloc((words + 1) * sizeof(char *));
 	if (pointer == NULL)
 		return (NULL);
-	if (words == 0)
+	index = 0;
+	while (words > index)
 	{
-		pointer[words] = NULL;
-		return (pointer);
+		pointer[index] = split(str, c, index);
+		if (pointer[index] == NULL)
+		{
+			clear_mem(pointer, words);
+			return (NULL);
+		}
+		index++;
 	}
-// printf("before split p: %p pi %p\n", pointer, pointer[index]);
-	pointer = split(pointer, str, c, words);
-// printf("------------end of fun----------\n");
+	pointer[words] = NULL;
 	return (pointer);
 }

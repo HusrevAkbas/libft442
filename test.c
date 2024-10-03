@@ -23,7 +23,7 @@ int main()
     // test_ft_strjoin();
     //test_ft_strtrim();
     // test_ft_strncmp();
-    //test_ft_split();
+    test_ft_split();
     // test_ft_itoa();
     // test_ft_strmapi();
     // test_ft_striteri();
@@ -31,6 +31,6 @@ int main()
     // test_ft_putstr_fd();
     // test_ft_putendl_fd();
     // test_ft_putnbr_fd();
-    test_nodes();
+    //test_nodes();
     return (0);
 }

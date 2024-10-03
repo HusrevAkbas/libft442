@@ -17,8 +17,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*pointer;
 	size_t	i;
+	size_t	div;
 
-	if (nmemb * size > INT_MAX)
+	if (nmemb == 0 || size == 0)
+		return (void *) malloc(0);
+	div = ULONG_MAX / nmemb;
+	if (div < size)
 		return (0);
 	pointer = (char *) malloc(nmemb * size);
 	if (pointer == NULL)

@@ -49,6 +49,10 @@ void	test_ft_lstmap()
 
 	ft_lstclear(&list, free);
 	ft_lstclear(&new_list, free);
+	free(s);
+	free(s2);
+	free(s3);
+	free(s4);
 
 	printf("is list null: %d\n", list == 0);
 	//printf("list p: %p, content ? : %s, next p: %p\n", list, list->content ? (char *) list->content : "no content", list->next);

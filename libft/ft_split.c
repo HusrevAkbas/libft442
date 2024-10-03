@@ -36,12 +36,9 @@ static char	**clear_mem(char **pointer, int i)
 {
 	while (i >= 0)
 	{
-// printf("clear mem: %p  i: %i, p[i]: %p\n", pointer, i, pointer[i]);
 		free(pointer[i]);
-// printf("clear mem: %p  i: %i\n", pointer, i);
 		i--;
 	}
-// printf("clear mem after while: %p  i: %i\n", pointer, i);
 	free(pointer);
 	pointer = NULL;
 	return (pointer);
@@ -57,7 +54,6 @@ static char	**split(char **pointer, char *s, char c, size_t word)
 		return (NULL);
 	i = 0;
 	index = 0;
-// printf("before while --- word: %zu, index: %zu, s: %s, c: %c\n", word, index, s, c);
 	while (word > index)
 	{
 		count_c = i;
@@ -68,16 +64,10 @@ static char	**split(char **pointer, char *s, char c, size_t word)
 		}
 		while (s[i] != 0 && s[i] != c)
 			i++;
-// printf("after count count: %zu, i: %zu sc: %s, si: %s\n", count_c, i, &s[count_c], &s[i]);
-// printf("i got new word %p pointer p %p, pointer[index]%p\n", new_word, pointer, pointer[index]);
 		pointer[index] = ft_substr(s, count_c, i - count_c);
 		if (pointer[index] == NULL)
-		{
-			pointer = clear_mem(pointer, index);
-			return (pointer);
-		}
+			return (clear_mem(pointer, index));
 		index++;
-// printf("after while: new: %s\n", new_word);
 	}
 	pointer[word] = NULL;
 	return (pointer);
@@ -101,8 +91,6 @@ char	**ft_split(char const *s, char c)
 		pointer[words] = NULL;
 		return (pointer);
 	}
-// printf("before split p: %p pi %p\n", pointer, pointer[index]);
 	pointer = split(pointer, str, c, words);
-// printf("------------end of fun----------\n");
 	return (pointer);
 }

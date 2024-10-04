@@ -14,15 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h> //DELETE THIS LINE BEFORE PUSHING
-
-//	1 - Name variables
-//	2 - Check memory when used malloc
-//	3 - Use malloc instead of calloc as long as you can
-//	4 - Cast type using calloc malloc to know if it s single
-//		or double pointer
-//	5 - Loop through indexes instead of moving pointer
-//	6 - Check if Makefile relinks
 
 typedef struct s_list
 {

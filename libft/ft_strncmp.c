@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" // DELETE THIS
-
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
@@ -29,12 +27,3 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-/*
-int	main(int ac, char **av)
-{
-	if (ac == 4)
-	{
-		printf("%d", ft_strncmp(av[1], av[2], atoi(av[3])));
-	}
-	return (42);
-}*/

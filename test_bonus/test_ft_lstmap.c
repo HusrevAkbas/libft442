@@ -4,14 +4,19 @@ void	*func_to_iter(void *pointer)
 	char	*str;
 	int		i;
 
-	str = (char *) pointer;
+	str = ft_strdup(pointer);
+	if (str == NULL)
+	{
+		printf("str dup failed");
+		return NULL;
+	}
 	i = 0;
 	while (str[i])
 	{
 		str[i] = ft_toupper(str[i]);
 		i++;
 	}
-	return pointer;
+	return str;
 }
 
 void	test_ft_lstmap()
@@ -35,6 +40,7 @@ void	test_ft_lstmap()
 	ft_lstadd_back(&list, list4);
 
 	t_list *new_list;
+	new_list = NULL;
 	new_list = ft_lstmap(list, func_to_iter, free);
 
 	printf("list p: %p, content ? : %s, next p: %p\n", list, list->content ? (char *) list->content : "no content", list->next);
@@ -49,10 +55,6 @@ void	test_ft_lstmap()
 
 	ft_lstclear(&list, free);
 	ft_lstclear(&new_list, free);
-	free(s);
-	free(s2);
-	free(s3);
-	free(s4);
 
 	printf("is list null: %d\n", list == 0);
 	//printf("list p: %p, content ? : %s, next p: %p\n", list, list->content ? (char *) list->content : "no content", list->next);

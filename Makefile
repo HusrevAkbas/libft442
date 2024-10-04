@@ -22,3 +22,13 @@ val:
 
 run:
 	./${TARGET}
+
+
+#BONUSFILES := $(wildcard *bonus.c)
+#SRCFILES := $(wildcard ft*.c)
+
+#%.o : %.c
+#	cc -c $(CFLAGS) $< -o $@
+
+#libft: $(SRCFILES) clean
+#	cc $(CFLAGS) -c $(SRCFILES) -o %.o

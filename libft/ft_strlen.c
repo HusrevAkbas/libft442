@@ -23,11 +23,3 @@ size_t	ft_strlen(const char *str)
 	}
 	return (length);
 }
-
-/*
-int	main()
-{
-	char	string[] =  "Solar System";
-	size_t length = ft_strlen(string);
-	return 0;
-}*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huakbas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:58:33 by huakbas           #+#    #+#             */
-/*   Updated: 2024/09/03 15:58:37 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/21 12:37:16 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	ft_atoi(const char *str)
 	int	b;
 	int	is_n;
 
+	if (!str)
+		return (0);
 	a = 0;
 	is_n = -1;
 	while (*str == ' ' || (*str <= 13 && *str >= 9))

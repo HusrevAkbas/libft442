@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huakbas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 14:54:35 by huakbas           #+#    #+#             */
-/*   Updated: 2024/09/09 14:54:37 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/21 12:40:38 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strchr(const char *s, int c)
 	int		size;
 	int		i;
 
+	if (!s)
+		return (0);
 	while (c >= 128)
 		c = c - 128;
 	i = 0;

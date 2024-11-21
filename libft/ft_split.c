@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huakbas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:47:59 by huakbas           #+#    #+#             */
-/*   Updated: 2024/09/13 16:48:01 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/21 12:39:37 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,5 @@ char	**ft_split(char const *s, char c)
 		pointer[word_count] = NULL;
 		return (pointer);
 	}
-	pointer = split(pointer, str, c, word_count);
-	return (pointer);
+	return (split(pointer, str, c, word_count));
 }

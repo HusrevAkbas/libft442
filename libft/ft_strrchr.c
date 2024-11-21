@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huakbas <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 14:54:35 by huakbas           #+#    #+#             */
-/*   Updated: 2024/09/09 14:54:37 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/21 12:42:45 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*pointer;
 	char	*pointer_to_char;
 
+	if (!s)
+		return (0);
 	while (c >= 128)
 		c = c - 128;
 	pointer = (char *) s;

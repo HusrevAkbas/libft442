@@ -6,14 +6,13 @@
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:25:55 by huakbas           #+#    #+#             */
-/*   Updated: 2024/11/25 13:24:09 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:12:03 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
-# include "libft.h"
 
 /*
 	1) Each conversion specification is introduced by the character %, and ends

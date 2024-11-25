@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_handle_string.c                                 :+:      :+:    :+:   */
+/*   ft_printf_handle_string.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:08:58 by husrevakbas       #+#    #+#             */
-/*   Updated: 2024/11/25 13:28:27 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:12:48 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	ft_handle_string(t_flags *flags, va_list args, int *res)
 {

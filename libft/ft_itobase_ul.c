@@ -6,11 +6,11 @@
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 14:58:45 by huakbas           #+#    #+#             */
-/*   Updated: 2024/11/25 13:30:44 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:13:11 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	is_base_valid(const char *base)
 {

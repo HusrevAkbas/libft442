@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_zeropadded_str.c                            :+:      :+:    :+:   */
+/*   ft_printf_set_zeropadded_str.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 16:23:46 by huakbas           #+#    #+#             */
-/*   Updated: 2024/11/20 17:54:57 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:12:31 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 char	*ft_set_zeropadded_str(t_flags *flags, char *str)
 {

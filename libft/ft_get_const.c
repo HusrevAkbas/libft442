@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_const.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husrevakbas <husrevakbas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:23:12 by huakbas           #+#    #+#             */
-/*   Updated: 2024/10/20 00:52:29 by husrevakbas      ###   ########.fr       */
+/*   Updated: 2024/11/25 15:13:16 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 /*
 	#	The value should be converted to  an  "alternate  form".
 		For x and X conversions, a nonzero result has the string

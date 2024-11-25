@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_handle_uint.c                                   :+:      :+:    :+:   */
+/*   ft_printf_handle_uint.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 20:13:50 by husrevakbas       #+#    #+#             */
-/*   Updated: 2024/11/25 13:08:31 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:12:44 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static void	set_prefix(t_flags *flags)
 {

@@ -6,11 +6,11 @@
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:25:49 by huakbas           #+#    #+#             */
-/*   Updated: 2024/11/21 12:29:53 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:12:26 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	print_substr(char *format, char **checkpoint, int *res)
 {

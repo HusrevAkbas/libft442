@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_flags.c                                     :+:      :+:    :+:   */
+/*   ft_printf_set_flags.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 23:38:00 by husrevakbas       #+#    #+#             */
-/*   Updated: 2024/11/21 14:14:41 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:12:34 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 /*
 	1) Each conversion specification is introduced by the character %, and ends

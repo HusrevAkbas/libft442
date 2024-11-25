@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_set_flagged_str.c                               :+:      :+:    :+:   */
+/*   ft_printf_set_flagged_str.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 16:23:46 by huakbas           #+#    #+#             */
-/*   Updated: 2024/11/25 13:21:52 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:12:40 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 size_t	get_width(t_flags *flags, size_t len_str, size_t len_pfix)
 {

@@ -11,9 +11,11 @@
         "limits.h": "c",
         "ctype.h": "c"
     },
-    "editor.detectIndentation": true,
+    "editor.detectIndentation": false,
     "editor.insertSpaces": false,
     "C_Cpp.errorSquiggles": "disabled",
     "files.autoSave": "afterDelay",
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "editor.tabCompletion": "on",
+    "editor.stickyTabStops": false
 }

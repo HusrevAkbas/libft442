@@ -6,7 +6,7 @@
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:00:16 by huakbas           #+#    #+#             */
-/*   Updated: 2024/11/21 12:51:06 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/25 13:24:42 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,13 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_printf.h"
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-typedef struct s_flags
-{
-	int		hash;
-	char	id;
-	int		minus;
-	int		plus;
-	int		precision;
-	int		space;
-	int		width;
-	int		zero;
-	char	*prefix;
-}	t_flags;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -78,19 +66,5 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
-
-int			ft_printf(const char *format, ...);
-void		ft_handle_convertion(t_flags *flags, va_list args, int *res);
-char		*ft_itobase_uint(unsigned int nbr, const char *base);
-const char	*get_const(char *set);
-char		*ft_itobase_ul(unsigned long nbr, const char *base);
-void		ft_handle_char(t_flags *flags, va_list args, int *res);
-void		ft_handle_int(t_flags *flags, va_list args, int *res);
-void		ft_handle_string(t_flags *flags, va_list args, int *res);
-void		ft_handle_pointer(t_flags *flags, va_list args, int *res);
-void		ft_handle_uint(t_flags *f, va_list a, int *r, const char *b);
-char		*ft_set_flagged_str(t_flags *flags, char *str);
-char		*ft_set_zeropadded_str(t_flags *flags, char *str);
-t_flags		*set_flags(char **checkpoint);
 
 #endif // LIBFT_H

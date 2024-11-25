@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itobase_ul.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husrevakbas <husrevakbas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 14:58:45 by huakbas           #+#    #+#             */
-/*   Updated: 2024/10/13 23:11:30 by husrevakbas      ###   ########.fr       */
+/*   Updated: 2024/11/25 13:30:44 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ char	*ft_itobase_ul(unsigned long nbr, const char *base)
 	int				last_d;
 	int				char_count;
 
+	if (!base)
+		return (0);
 	base_length = is_base_valid(base);
 	if (base_length == 0)
 		return (0);

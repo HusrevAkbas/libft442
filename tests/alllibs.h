@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <fcntl.h>
 #include <bsd/string.h>
+#include <stdio.h>
 
 void	test_ft_atoi();
 void	test_ft_isascii();

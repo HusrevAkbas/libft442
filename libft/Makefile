@@ -6,7 +6,7 @@
 #    By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 16:30:17 by huakbas           #+#    #+#              #
-#    Updated: 2024/11/25 15:10:52 by huakbas          ###   ########.fr        #
+#    Updated: 2024/11/29 14:57:56 by huakbas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ ft_putchar_fd.c ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c\
 ft_get_const.c ft_printf_handle_uint.c ft_printf_set_flags.c ft_printf_handle_char.c\
 ft_itobase_uint.c ft_printf_set_zeropadded_str.c ft_printf_handle_convertion.c\
 ft_itobase_ul.c ft_printf_handle_int.c ft_printf.c ft_printf_handle_pointer.c\
-ft_printf_handle_string.c ft_printf_set_flagged_str.c
+ft_printf_handle_string.c ft_printf_set_flagged_str.c get_next_line.c get_next_line_utils.c
 
 BONUSFILES := ft_lstadd_back_bonus.c ft_lstlast_bonus.c ft_lstsize_bonus.c\
 ft_lstadd_front_bonus.c ft_lstdelone_bonus.c ft_lstmap_bonus.c\

@@ -6,7 +6,7 @@
 /*   By: huakbas <huakbas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:00:16 by huakbas           #+#    #+#             */
-/*   Updated: 2024/11/25 13:24:42 by huakbas          ###   ########.fr       */
+/*   Updated: 2024/11/29 14:55:01 by huakbas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_printf.h"
-
+# include "get_next_line.h"
 typedef struct s_list
 {
 	void			*content;

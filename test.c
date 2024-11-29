@@ -32,21 +32,8 @@ int	main()
 	//test_ft_putendl_fd();
 	//test_ft_putnbr_fd();
 	//test_nodes();
-	//ft_printf("This is my own %s", "printf func\n");
-	
-	int		fd;
-	char	*s = "";
-
-	fd = open("file3", O_RDONLY);
-
-printf("fd: %i\n", fd);
-	while (s)
-	{
-		s = get_next_line(fd);
-		printf("%s", s);
-		free(s);
-		sleep(1);
-	}
-
+	//test_ft_printf();
+	//test_gnl();
+ft_printf("tester works");
 	return (0);
 }
